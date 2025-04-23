@@ -50,8 +50,6 @@ jobs:
           echo "init node successful"
       # 克隆 Hexo 静态资源库
       # clone博客静态文件仓库，防止Hexo推送时覆盖整个静态文件仓库，而是只推送有更改的文件
-      # 此处的仓库链接是我的个人仓库，请根据你的仓库链接进行修改,
-      #仓库路径可以有第二种写法
       - name: 克隆 Hexo 静态资源库
         run: |
           git clone https://${{ secrets.GH_TOKEN }}@github.com/trying-c/trying-hexo.git .deploy_git
