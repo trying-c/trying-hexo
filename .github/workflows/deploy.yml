@@ -1,0 +1,66 @@
+# Action 的名字
+name: Hexo Auto Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  # 使用此 git 用户部署到 github 仓库
+  GIT_USER: trying-hexo
+  # 使用此 git 邮箱部署到 github 仓库
+  GIT_EMAIL: tryingchung@hexo.com
+  # 要部署到的分支
+  GIT_DEPLOY_BRANCH: main
+
+jobs:
+  build:
+    # name: Build on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检查分支
+        uses: actions/checkout@v2
+        with:
+          ref: $GIT_DEPLOY_BRANCH
+      
+      # 安装 node.js
+      - name: 安装 Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+      
+      # 配置环境
+      - name: 配置环境
+        env:
+          # 配置的私钥标题 
+          HEXO_DEPLOY_KEY: ${{secrets.HEXO_DEPLOY_KEY}}
+        run: |
+          sudo timedatectl set-timezone "Asia/Shanghai"
+          mkdir -p ~/.ssh/
+          echo "$HEXO_DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+          git config --global user.name $GIT_USER
+          git config --global user.email $GIT_EMAIL
+      
+      # 安装依赖
+      - name: 安装依赖
+        run: |
+          npm install hexo-cli -g
+          npm install
+
+      # 克隆 Hexo 静态资源库
+      # clone博客静态文件仓库，防止Hexo推送时覆盖整个静态文件仓库，而是只推送有更改的文件
+      - name: 克隆 Hexo 静态资源库
+        run: |
+          git clone https://github.com/trying-c/trying-c.github.io.git .deploy_git
+
+      # 部署
+      - name: 部署 Hexo
+        run: | 
+          hexo clean
+          hexo generate
+          hexo deploy
+
