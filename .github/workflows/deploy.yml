@@ -1,50 +1,65 @@
-name: Deploy Hexo to GitHub Pages
+# 脚本1，供初学者使用，如有其他需要在部署前运行的插件（如gulp、hexo-bangumi-bilibili等，请参考脚本2）
+# 当有改动推送到master分支时，启动Action
 
+# Action 的名字
+name: Hexo Auto Deploy
 on:
   push:
     branches:
-      - main  # 当推送到 main 分支时触发
+      - main
+env:
+  # 使用此 git 用户部署到 github 仓库
+  GIT_USER: github-actions[bot]
+  # 使用此 git 邮箱部署到 github 仓库
+  GIT_EMAIL: github-actions[bot]@users.noreply.github.com
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: 拉取仓库代码
         uses: actions/checkout@v4
         with:
-          submodules: false  # 禁用子模块检查
-
-      - name: Setup Node.js
+          ref: main
+      - name: 安装nodejs
         uses: actions/setup-node@v3
         with:
-          node-version: v20.18.0
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Install Hexo Git Deployer
+          node-version: 20.18.0
+      - name: Cache node_modules # 缓存 node_modules，提高编译速度，毕竟每月只有 2000 分钟。
+        uses: actions/cache@v2  # 亲测 Github 服务器编译速度比我自己电脑都快，如果每次构建按5分钟计算，我们每个月可以免费部署 400 次，Github yyds！！！
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      # 配置环境
+      - name: 配置环境
         run: |
-          npm install hexo-deployer-git --save
-          npm install hexo-cli -g
-
-      - name: Clean and Generate Static Files
+          git config --global user.name $GIT_USER
+          git config --global user.email $GIT_EMAIL
+      # 安装依赖
+      - name: 安装依赖
+        run: |
+          npm install hexo-cli -g 
+          echo "install hexo successful"
+          npm install
+          echo "init node successful"
+      # 克隆 Hexo 静态资源库
+      # clone博客静态文件仓库，防止Hexo推送时覆盖整个静态文件仓库，而是只推送有更改的文件
+      # 此处的仓库链接是我的个人仓库，请根据你的仓库链接进行修改,
+      #仓库路径可以有第二种写法
+      - name: 克隆 Hexo 静态资源库
+        run: |
+          git clone https://${{ secrets.GH_TOKEN }}@github.com/trying-c/trying-hexo.git .deploy_git
+      # 部署  部署可以使用 hexo d 进行部署 也可以使用git直接推送
+      - name: 部署 Hexo
         run: |
           hexo clean
           hexo generate
-
-      - name: Configure Git
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-      - name: Deploy to GitHub Pages
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          cd public/
-          git init
-          git add -A
-          git commit -m "Create by workflows"
-          git remote add origin https://${{ secrets.GH_TOKEN }}@github.com/trying-c/trying-hexo.git
-          git push origin HEAD:gh-pages -f
+          echo "build blog successful"
+          hexo deploy
+      - run: echo "Deploy Successful!"
