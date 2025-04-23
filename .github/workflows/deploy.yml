@@ -25,17 +25,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20.18.0
-      - name: Cache node_modules # 缓存 node_modules，提高编译速度，毕竟每月只有 2000 分钟。
-        uses: actions/cache@v4  # 亲测 Github 服务器编译速度比我自己电脑都快，如果每次构建按5分钟计算，我们每个月可以免费部署 400 次，Github yyds！！！
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+      # - name: Cache node_modules # 缓存 node_modules，提高编译速度，毕竟每月只有 2000 分钟。
+      #   uses: actions/cache@v4 # 亲测 Github 服务器编译速度比我自己电脑都快，如果每次构建按5分钟计算，我们每个月可以免费部署 400 次，Github yyds！！！
+      #   env:
+      #     cache-name: cache-node-modules
+      #   with:
+      #     path: ~/.npm
+      #     key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-build-${{ env.cache-name }}-
+      #       ${{ runner.os }}-build-
+      #       ${{ runner.os }}-
       # 配置环境
       - name: 配置环境
         run: |
@@ -55,11 +55,13 @@ jobs:
       - name: 克隆 Hexo 静态资源库
         run: |
           git clone https://${{ secrets.GH_TOKEN }}@github.com/trying-c/trying-hexo.git .deploy_git
-      # 部署  部署可以使用 hexo d 进行部署 也可以使用git直接推送
-      - name: 部署 Hexo
+      - name: 生成静态文件
         run: |
           hexo clean
           hexo generate
           echo "build blog successful"
+      # 部署  部署可以使用 hexo d 进行部署 也可以使用git直接推送
+      - name: 部署 Hexo
+        run: |
           hexo deploy
-      - run: echo "Deploy Successful!"
+          echo "Deploy Successful!"
