@@ -1,65 +1,50 @@
-# Action 的名字
-name: Hexo Auto Deploy
+name: Deploy Hexo to GitHub Pages
 
 on:
   push:
     branches:
-      - main
-
-env:
-  # 使用此 git 用户部署到 github 仓库
-  GIT_USER: trying-hexo
-  # 使用此 git 邮箱部署到 github 仓库
-  GIT_EMAIL: tryingchung@hexo.com
-  # 要部署到的分支
-  GIT_DEPLOY_BRANCH: main
+      - main  # 当推送到 main 分支时触发
 
 jobs:
   build:
-    # name: Build on node  
     runs-on: ubuntu-latest
 
     steps:
-      - name: 检查分支
+      - name: Checkout repository
         uses: actions/checkout@v4
-      
-      # 安装 node.js
-      - name: 安装 Node.js  
+        with:
+          submodules: false  # 禁用子模块检查
+
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: v20.18.0
-          cache: "npm"
-      
-      # 配置环境
-      - name: 配置环境
-        env:
-          # 配置的私钥标题 
-          HEXO_DEPLOY_KEY: ${{secrets.HEXO_DEPLOY_KEY}}
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Install Hexo Git Deployer
         run: |
-          sudo timedatectl set-timezone "Asia/Shanghai"
-          mkdir -p ~/.ssh/
-          echo "$HEXO_DEPLOY_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-          git config --global user.name $GIT_USER
-          git config --global user.email $GIT_EMAIL
-      
-      # 安装依赖
-      - name: 安装依赖
-        run: |
+          npm install hexo-deployer-git --save
           npm install hexo-cli -g
-          npm install
 
-      # 克隆 Hexo 静态资源库
-      # clone博客静态文件仓库，防止Hexo推送时覆盖整个静态文件仓库，而是只推送有更改的文件
-      - name: 克隆 Hexo 静态资源库
+      - name: Clean and Generate Static Files
         run: |
-          git clone https://github.com/trying-c/trying-c.github.io.git .deploy_git
-
-      # 部署
-      - name: 部署 Hexo
-        run: | 
           hexo clean
           hexo generate
-          hexo deploy
 
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Deploy to GitHub Pages
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          cd public/
+          git init
+          git add -A
+          git commit -m "Create by workflows"
+          git remote add origin https://${{ secrets.GH_TOKEN }}@github.com/trying-c/trying-hexo.git
+          git push origin HEAD:gh-pages -f
