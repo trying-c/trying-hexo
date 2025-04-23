@@ -16,20 +16,19 @@ env:
 
 jobs:
   build:
-    # name: Build on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    # name: Build on node  
     runs-on: ubuntu-latest
 
     steps:
       - name: 检查分支
-        uses: actions/checkout@v2
-        with:
-          ref: $GIT_DEPLOY_BRANCH
+        uses: actions/checkout@v4
       
       # 安装 node.js
-      - name: 安装 Node.js ${{ matrix.node_version }}
-        uses: actions/setup-node@v1
+      - name: 安装 Node.js  
+        uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node_version }}
+          node-version: v20.18.0
+          cache: "npm"
       
       # 配置环境
       - name: 配置环境
