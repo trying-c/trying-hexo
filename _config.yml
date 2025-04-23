@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Trying Site # 网站标题
+title: Trying's Site # 网站标题
 subtitle: A site for trying things out # 网站副标题
 description: "" # 网站描述
 keywords: "" # 网站的关键词。 支持多个关键词。
@@ -106,5 +106,5 @@ deploy:
   type: git
   #  token：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
   #  此处使用token连接是为了github action 工作流执行时有访问仓库的权限
-  repo: https://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@github.com/trying-c/trying-c.github.io.git
+  repo: https://github.com/trying-c/trying-c.github.io.git
   branch: main
