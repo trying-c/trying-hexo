@@ -106,8 +106,8 @@ ignore:
 # theme: landscape
 theme: butterfly
 
-env:
-  GH_TOKEN: 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
+# env:
+#   GH_TOKEN: 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
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
