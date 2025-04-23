@@ -103,6 +103,7 @@ theme: butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  - type: git
-    repo: https://github.com/trying-c/trying-hexo.git
-    branch: gh-pages
+  type: git
+  #  此处使用token连接是为了github action 工作流执行时有访问仓库的权限
+  repo: https://github.com/trying-c/trying-c.github.io.git
+  branch: main
