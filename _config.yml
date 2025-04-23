@@ -4,12 +4,18 @@
 
 # Site
 title: Trying's Site # 网站标题
-subtitle: A site for trying things out # 网站副标题
+subtitle: 你来啦！！ # 网站副标题
 description: "" # 网站描述
 keywords: "" # 网站的关键词。 支持多个关键词。
 author: Trying Chung # 作者名称
 language: zh-CN # 语言设置。 例如：zh-CN, en-US, ja-JP
 timezone: Asia/Shanghai # 时区设置。 例如：Asia/Shanghai, America/New_York
+
+favicon:
+small: /imgs/tc.png
+medium: /imgs/tc.png
+apple_touch_icon: /imgs/tc.png
+safari_pinned_tab: /imgs/tc.png
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -109,5 +115,5 @@ deploy:
   type: git
   #  token：
   #  此处使用token连接是为了github action 工作流执行时有访问仓库的权限
-  repo: git@github.com:trying-c/trying-c.github.io.git
+  repo: https://github.com/trying-c/trying-c.github.io.git
   branch: main
