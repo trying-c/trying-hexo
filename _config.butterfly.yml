@@ -1,0 +1,485 @@
+nav:
+  # Navigation bar logo image
+  logo: /imgs/tc.png
+  display_title: true
+  # Whether to fix navigation bar
+  fixed: false
+
+# -------------------------------------------------------------
+
+# 必须是 /xxx/，后面||分开，然后写图标名。
+# 如果不希望显示图标，图标名可不写。
+# 默认子目录是展开的，如果你想要隐藏，在子目录里添加 hide 。
+menu:
+  首页: / || fas fa-home
+  时间轴: /archives/ || fas fa-archive
+  标签: /tags/ || fas fa-tags
+  分类: /categories/ || fas fa-folder-open
+  清单||fa fa-heartbeat:
+    音乐: /music/ || fas fa-music
+    照片: /Gallery/ || fas fa-images
+    电影: /movies/ || fas fa-video
+    友链: /link/ || fas fa-link
+    关于: /about/ || fas fa-heart
+  碎片: /pianke/ || fas fa-comment-dots
+
+# -----------------------------------------------------------------
+
+code_blocks:
+  theme: false # 代码高亮主题，可选 darker / pale night / light / ocean / false
+  macStyle: true # 是否使用 Mac 风格
+
+  height_limit: false # 代码块高度限制（单位: px）, 可填写 数字 或者 false
+  word_wrap: false # 是否自动换行
+
+  # Toolbar
+  copy: true # 是否显示复制按钮
+  language: true # 是否显示语言标签
+
+  shrink: false # true: 收缩代码块 / false: 展开代码块 / none: 展开代码块并隐藏按钮
+  fullpage: false # 是否全屏显示代码块
+
+  highlight_shrink: false # true 全部代码框不展开，需点击>打开;
+  #  false 代码框展开，有>点击按钮;
+  #  none 不显示>按钮
+  code_word_wrap: true
+  highlight_height_limit: false # unit: px
+
+# --------------------------------------------------------------------
+
+avatar:
+  img: /imgs/tc.png
+  effect: false # 头像会一直转圈
+
+social:
+  fab fa-github: https://github.com/trying-c || Github || "#hdhfbb"
+  fas fa-envelope: mailto:tryingchung@qq.com || Email || "#000000"
+
+# 是否禁用顶部图片
+disable_top_img: false
+# 主页的 top_img
+index_img: "linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"
+# 默认的 top_img，当页面的 top_img 没有配置时，会显示 default_top_img
+default_top_img:
+# 归档页面的 top_img
+archive_img:
+# tag 子页面 的 默认 top_img
+tag_img:
+# tag 子页面的 top_img，可配置每个 tag 的 top_img
+tag_per_img:
+# category 子页面 的 默认 top_img
+category_img:
+# category 子页面的 top_img，可配置每个 category 的 top_img
+category_per_img:
+# footer是否显示图片背景(与top_img一致)
+footer_img: true
+
+# 颜色（HEX值/RGB值/顔色单词/渐变色)
+# 留空 不显示背景
+background:
+
+# -------------------------------------------------------------------------
+cover:
+  # 主页是否显示文章封面图
+  index_enable: true
+  # 侧栏是否显示文章封面图
+  aside_enable: true
+  # 归档页面是否显示文章封面图
+  archives_enable: true
+
+  # 默认的 cover, 可配置图片链接/顔色/渐变色等
+  default_cover:
+  # 当配置多张图片时,会随机选择一张作为 cover.此时写法应为
+  # default_cover:
+  #   - https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png
+  #   - https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg2.png
+  #   - https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg3.png
+
+# ---------------------------------------------------------------------------------------
+post_meta:
+  # 主页
+  page:
+    # 显示文章的时间，可选 created / updated / both
+    date_type: created
+    # 配置时间显示明确时间还是相对时间，可选 date / relative
+    date_format: date
+    # 是否显示文章的分类
+    categories: true
+    # 是否显示文章的标签
+    tags: false
+    # 是否显示文字标签
+    label: true
+
+  # 文章页
+  post:
+    # 文章页 meta 显示的位置，可选 left / center
+    position: left
+    # 显示文章的时间，可选 created / updated / both
+    date_type: both
+    # 配置时间显示明确时间还是相对时间，可选 date / relative
+    date_format: date
+    # 是否显示文章的分类
+    categories: true
+    # 是否显示文章的标签
+    tags: true
+    # 是否显示文字标签
+    label: true
+
+# ---------------------------------------------------------------------------------------
+
+# 首页头图的设置
+# 默认: 头图全屏，站点信息在中间
+# 站点信息的位置，例如: 300px/300em/300rem/10%
+index_site_info_top:
+# 头图的高度，例如: 300px/300em/300rem
+index_top_img_height:
+
+# 主页subtitle
+subtitle:
+  enable: true
+  # Typewriter Effect (打字效果)
+  effect: true
+  # Customize typed.js
+  # https://github.com/mattboldt/typed.js/#customization
+  typed_option:
+  # source 调用第三方服务
+  # false 关闭调用
+  # 1  调用一言网的一句话（简体） https://hitokoto.cn/
+  # 2  调用一句网（简体） http://yijuzhan.com/
+  # 3  调用今日诗词（简体） https://www.jinrishici.com/
+  # subtitle 会先显示 source , 再显示 sub 的内容
+  source: false
+  # 如果关闭打字效果，subtitle 只会显示 sub 的第一行文字
+  sub:
+    - 今日事&#44;今日毕
+    # 今日毕
+    - Never put off till tomorrow what you can do today
+
+# ---------------------------------------------------------------------------------------
+
+index_layout: 3
+# 1: 封面在左，信息在右;
+# 2: 封面在右，信息在左;
+# 3: 封面和信息左右交替显示;
+# 4: 封面在上，信息在下;
+# 5: 信息显示在封面上;
+# 6: 瀑布流布局 - 封面在上，信息在下;
+# 7: 瀑布流布局 - 信息显示在封面上
+
+# ----------------------------------------------------------------
+
+index_post_content:
+  # 显示文章内容的方式，有四种可供选择
+  # 1 - 只显示 description
+  # 2 - 优先选择 description，如果没有配置 description，则显示自动节选的内容
+  # 3 - 只显示自动节选
+  # 4 - 不显示文章内容
+  method: 3
+  # 自动节选的长度，只有在 method 为 2 或者 3 的时候才需要配置 length
+  length: 500
+
+toc:
+  # 文章页是否显示 TOC
+  post: true
+  # 普通页面是否显示 TOC
+  page: false
+  # 是否显示章节数
+  number: true
+  # 是否展开 TOC
+  expand: true
+  # 简洁模式（侧边栏只显示 TOC, 只对文章页有效 ）
+  style_simple: false
+  # 是否显示滚动进度百分比
+  scroll_percent: true
+
+post_copyright:
+  # 是否启用版权声明
+  enable: false
+#   # 是否进行文章 URL 解码
+#   decode: false
+#   # 作者链接
+#   author_href:
+#   # 许可证类型
+#   license: CC BY-NC-SA 4.0
+#   # 许可证链接
+#   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+# reward:
+#   enable: true
+#   text:
+#   QR_code:
+#     - img: /img/wechat.jpg
+#       link:
+#       text: 微信
+#     - img: /img/alipay.jpg
+#       link:
+#       text: 支付宝
+
+# related_post:
+#   enable: true
+#   limit: 6 # 显示推荐文章数目
+#   date_type: created # or created or updated 文章日期显示创建日或者更新日
+
+# post_pagination (分页)
+# value: 1 || 2 || false
+# 1: 下一篇显示的是旧文章
+# 2: 下一篇显示的是新文章
+# false: 关闭分页按钮
+post_pagination: false
+
+# # Displays outdated notice for a post
+# noticeOutdate:
+#   enable: false # 是否开启文章过期提醒
+#   # 提醒样式, simple / flat
+#   style: flat
+#   # 设置多少天后提醒，默认 365 天
+#   limit_day: 365
+#   # 提醒位置 top / bottom
+#   position: top
+#   message_prev: It has been  # 提示文字
+#   message_next: days since the last update, the content of the article may be outdated. # 提示文字
+
+# ---------------------------------------------------------------------------------------
+footer:
+  owner:
+    enable: true
+    since: 2025 # 是一个来展示你站点起始时间的选项。它位于页面的最底部。
+
+# 是一个给你用来在页脚自定义文本的选项。通常你可以在这里写声明文本等,支持 HTML。
+# custom_text: Hi, welcome to my <a href="https://butterfly.js.org/">blog</a>!
+
+# ---------------------------------------------------------------------
+# 侧边栏的配置
+aside:
+  enable: true # 是否启用侧边栏
+  # hide: false # 是否隐藏侧边栏
+  button: true # 是否显示侧边栏按钮
+  mobile: true # 是否在移动端显示侧边栏
+  position: left # 侧边栏位置，left / right
+
+  display:
+    # archive 页面是否显示 aside
+    archive: true
+    # tag 页面是否显示 aside
+    tag: true
+    # category 页面是否显示 aside
+    category: true
+
+  card_author:
+    enable: true # 是否显示作者卡片
+    description: # 作者描述信息
+    button:
+      enable: true #是否显示按钮
+      icon: fab fa-github # 按钮图标，可在这里找到图标名称：https://fontawesome.com/icons?d=gallery&m=free
+      text: Follow Me # 按钮文字
+      link: https://github.com/trying-c # 按钮链接
+
+  card_announcement:
+    enable: true # 是否显示公告卡片
+    content: This is my Blog # 公告内容 （可使用 html 标签）
+
+  card_recent_post:
+    enable: true # 是否显示最新文章卡片
+    # 显示文章数目，0 为全部
+    limit: 5
+    # 排序方式，date / updated
+    sort: date
+    sort_order:
+
+  card_newest_comments:
+    enable: false # 是否显示最新评论卡片
+    sort_order:
+    limit: 6
+    # 保存时间，单位分钟，保存到本地存储，避免每次刷新都重新请求数据
+    storage: 10
+    avatar: true # 是否显示头像
+
+  card_categories:
+    enable: true # 是否显示分类卡片
+    # 显示分类数目，0 为全部
+    limit: 8
+    # 是否展开分类，none / true / false
+    expand: none
+    sort_order:
+  card_tags:
+    enable: true
+    # 显示标签数目，0 为全部
+    limit: 40
+    color: false # 是否显示标签顔色
+    # 标签排序方式，random / name / length
+    orderby: random
+    # 排序方式，1 为升序，-1 为降序
+    order: 1
+    sort_order:
+  card_archives:
+    enable: true
+    # 归档类型，monthly / yearly
+    type: monthly
+    # 归档显示格式，例如：YYYY 年 MM 月
+    format: MMMM YYYY
+    # 排序方式，1 为升序，-1 为降序
+    order: -1
+    # 显示归档数目，0 为全部
+    limit: 8
+    sort_order:
+  card_post_series:
+    enable: true # 是否显示文章系列卡片
+    # 是否显示系列名称
+    series_title: false
+    # 排序方式，title / date
+    orderBy: "date"
+    # 排序方式，1 为升序，-1 为降序
+    order: -1
+  card_webinfo:
+    enable: true # 是否显示网站信息卡片
+    post_count: true # 是否显示文章数量
+    last_push_date: true # 是否显示最后更新日期
+    sort_order:
+    # 显示网站运行时间,不需要开启，留空白就行（开启格式一定要是 Month/Day/Year Time 或者 Year/Month/Day Time
+    runtime_date:
+
+# ---------------------------------------------------------------------------------------------------
+# The distance between the bottom right button and the bottom (default unit: px)
+rightside_bottom:
+
+translate:
+  enable: true
+  # 默认按钮显示文字(网站是简体，应设置为'default: 繁')
+  default: 简
+  #网站默认语言，1: 繁体中文, 2: 简体中文
+  defaultEncoding: 1
+  #延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+  translateDelay: 0
+  #当文字是简体时，按钮显示的文字
+  msgToTraditionalChinese: "繁"
+  #当文字是繁体时，按钮显示的文字
+  msgToSimplifiedChinese: "简"
+
+# 閲读模式下会去掉除文章外的内容，避免干扰閲读。
+readmode: true
+
+# dark mode
+darkmode:
+  enable: true
+  # dark mode和 light mode切换按钮
+  button: true
+  #   自动切换的模式
+  # autoChangeMode: 1 跟随系统而变化，不支持的浏览器/系统将按照时间 start 到 end 之间切换为 light mode
+  # autoChangeMode: 2 只按照时间 start 到 end 之间切换为 light mode ,其余时间为 dark mode
+  # autoChangeMode: false 取消自动切换
+  autoChangeMode: false
+  # Set the light mode time. The value is between 0 and 24. If not set, the default value is 6 and 18
+  start: # 8
+  end: # 22
+
+# 滚动状态百分比 show scroll percent in scroll-to-top button
+rightside_scroll_percent: true
+
+# Don't modify the following settings unless you know how they work (非必要请不要修改 )
+# Choose: readmode,translate,darkmode,hideAside,toc,chat,comment
+# Don't repeat 不要重复
+rightside_item_order:
+  enable: false
+  hide: # readmode,translate,darkmode,hideAside
+  show: # toc,chat,comment
+
+# -------------------------------------------------------------------------------------------------------
+# anchor
+anchor:
+  # when you scroll, the URL will update according to header id.
+  auto_update: false
+  # Click the headline to scroll and update the anchor
+  click_to_scroll: false
+
+# 可开启图片 Figcaption 描述文字显示
+photofigcaption: true
+
+copy:
+  # 是否开启网站复制权限
+  enable: true
+  # 复制的内容后面加上版权信息
+  copyright:
+    # 是否开启复制版权信息添加
+    enable: false
+    # 字数限制，当复制文字大于这个字数限制时，将在复制的内容后面加上版权信息
+    limit_count: 150
+
+# Need to install the hexo-wordcount plugin
+wordcount:
+  enable: false
+  # 在文章页面显示字数
+  post_wordcount: true
+  # 在文章页面显示閲读时间
+  min2read: true
+  # 在侧边栏显示网站总字数
+  total_wordcount: true
+
+# 访问人数 busuanzi (UV 和 PV)
+busuanzi:
+  site_uv: false
+  site_pv: false
+  page_pv: false
+
+# 主题支持三种搜索方式（algolia_search / local_search / docsearch），你可以选择一种或者多种搜索方式
+# search:
+#   # Choose: algolia_search / local_search / docsearch
+#   # leave it empty if you don't need search
+#   use: # 选择你需要的搜索方式，不需要开启留空白
+#   placeholder: # 搜索框的提示文字
+
+canvas_ribbon:
+  enable: false
+  # The size of ribbon
+  size: 150
+  # The opacity of ribbon (0 ~ 1)
+  alpha: 0.6
+  zIndex: -1
+  click_to_change: false
+  mobile: false
+
+canvas_fluttering_ribbon:
+  enable: true
+  mobile: false # false 手机端不显示 true 手机端显示
+
+canvas_nest:
+  enable: false
+  # Color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
+  color: "0,0,255"
+  # The opacity of line (0~1)
+  opacity: 0.7
+  # The z-index property of the background
+  zIndex: -1
+  # The number of lines
+  count: 99
+  mobile: false
+
+# 点击出现爱心
+click_heart:
+  enable: true
+  mobile: false
+
+# Choose: fancybox / medium_zoom
+# https://github.com/francoischalifour/medium-zoom
+# https://fancyapps.com/fancybox/
+# Leave it empty if you don't need lightbox
+lightbox:
+  # Artitalk
+  # see https://artitalk.js.org/
+  artitalk:
+    enable: true
+    appId: C151HQUfxqiw5nY5uCkwZ71A-MdYXbMMI
+    appKey: d5v3gaa3uHOTeTXp94VqxuSj
+    path:
+    js:
+    option:
+    front_matter:
+
+# A simple 404 page
+# 简单的 404 页面
+error_404:
+  # 是否启用 404 页面
+  enable: false
+  # 404 页面的副标题
+  subtitle: 'Page Not Found'
+  # 404 页面的卡片背景图片
+  background: https://i.loli.net/2020/05/19/aKOcLiyPl2JQdFD.png 
