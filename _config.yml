@@ -103,6 +103,6 @@ theme: butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  - type: "git"
-    repo: git@github.com:trying-c/trying-c.github.io.git
+  - type: git
+    repo: https://github.com/trying-c/trying-c.github.io.git
     branch: main
