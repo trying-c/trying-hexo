@@ -12,10 +12,7 @@ language: zh-CN # 语言设置。 例如：zh-CN, en-US, ja-JP
 timezone: Asia/Shanghai # 时区设置。 例如：Asia/Shanghai, America/New_York
 
 favicon:
-small: /imgs/tc.ico # 小图标
-medium: /imgs/tc.ico # 中图标
-large: /imgs/tc.ico # 大图标
-
+  small: favicon.ico
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://trying-c.github.io/ #网址, 必须以 http:// 或 https:// 开头

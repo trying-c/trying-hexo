@@ -17,7 +17,7 @@ menu:
   分类: /categories/ || fas fa-folder-open
   清单||fa fa-heartbeat:
     # 音乐: /music/ || fas fa-music
-    照片: /Gallery/ || fas fa-images
+    照片: /Gallery/ || fas fa-imgs
     # 电影: /movies/ || fas fa-video
     # 友链: /link/ || fas fa-link
     关于: /about/ || fas fa-heart
@@ -349,7 +349,7 @@ aside:
     last_push_date: true # 是否显示最后更新日期
     sort_order:
     # 显示网站运行时间,不需要开启，留空白就行（开启格式一定要是 Month/Day/Year Time 或者 Year/Month/Day Time
-    runtime_date: 
+    runtime_date:
 
 # ---------------------------------------------------------------------------------------------------
 # The distance between the bottom right button and the bottom (default unit: px)
