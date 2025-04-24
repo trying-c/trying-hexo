@@ -16,10 +16,10 @@ menu:
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
   清单||fa fa-heartbeat:
-    音乐: /music/ || fas fa-music
+    # 音乐: /music/ || fas fa-music
     照片: /Gallery/ || fas fa-images
-    电影: /movies/ || fas fa-video
-    友链: /link/ || fas fa-link
+    # 电影: /movies/ || fas fa-video
+    # 友链: /link/ || fas fa-link
     关于: /about/ || fas fa-heart
   碎片: /pianke/ || fas fa-comment-dots
 
@@ -86,7 +86,7 @@ cover:
   # 侧栏是否显示文章封面图
   aside_enable: false
   # 归档页面是否显示文章封面图
-  archives_enable: false
+  archives_enable: true
 
   # 默认的 cover, 可配置图片链接/顔色/渐变色等
   default_cover:
@@ -236,7 +236,7 @@ post_copyright:
 # 1: 下一篇显示的是旧文章
 # 2: 下一篇显示的是新文章
 # false: 关闭分页按钮
-post_pagination: false
+post_pagination: 1
 
 # # Displays outdated notice for a post
 # noticeOutdate:
@@ -333,21 +333,23 @@ aside:
     # 显示归档数目，0 为全部
     limit: 8
     sort_order:
+
   card_post_series:
     enable: true # 是否显示文章系列卡片
     # 是否显示系列名称
-    series_title: false
+    series_title: true
     # 排序方式，title / date
     orderBy: "date"
     # 排序方式，1 为升序，-1 为降序
     order: -1
+
   card_webinfo:
     enable: true # 是否显示网站信息卡片
     post_count: true # 是否显示文章数量
     last_push_date: true # 是否显示最后更新日期
     sort_order:
     # 显示网站运行时间,不需要开启，留空白就行（开启格式一定要是 Month/Day/Year Time 或者 Year/Month/Day Time
-    runtime_date:
+    runtime_date: 
 
 # ---------------------------------------------------------------------------------------------------
 # The distance between the bottom right button and the bottom (default unit: px)
@@ -428,7 +430,7 @@ wordcount:
 # 访问人数 busuanzi (UV 和 PV)
 busuanzi:
   site_uv: false
-  site_pv: false
+  site_pv: true
   page_pv: true
 
 # 主题支持三种搜索方式（algolia_search / local_search / docsearch），你可以选择一种或者多种搜索方式
@@ -576,3 +578,10 @@ font:
 blog_title_font:
   font_link: https://fonts.googleapis.com/css?family=Titillium+Web&display=swap
   font-family: Titillium Web, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif
+
+# ---------------------------------------------------------------------
+series:
+  enable: true
+  orderBy: "date" # Order by title or date
+  order: 1 # Sort of order. 1, asc for ascending; -1, desc for descending
+  number: true

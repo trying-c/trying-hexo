@@ -1,20 +1,6 @@
-- date: 2025-04-23 04:10:00
+- date: "2025-04-25 01:49:00"
   key: key-1
   content: |
-    测试Test One Two Three 123 123 
-  tags:
-    - 开发
-
-- date: 2025-04-23 04:10:00
-  key: key-2
-  content: |
-    今天是个好日子
+    有点烦
   tags:
     - 心情
-
-- date: 2025-04-23 04:10:00
-  key: key-3
-  content: |
-    举个栗子
-  tags:
-    - 开发
