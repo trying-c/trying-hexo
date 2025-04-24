@@ -5,8 +5,8 @@ nav:
   # Whether to fix navigation bar
   fixed: false
 
+favicon: /imgs/tc.ico
 # -------------------------------------------------------------
-favicon: /favicon.png
 # 必须是 /xxx/，后面||分开，然后写图标名。
 # 如果不希望显示图标，图标名可不写。
 # 默认子目录是展开的，如果你想要隐藏，在子目录里添加 hide 。
@@ -621,9 +621,9 @@ valine:
   appId: UiqS9a0n4lJdFRrqPbrgjpbS-MdYXbMMI
   appKey: NkeAhjIM8aY4DBSeOIzuQ1qQ
   #查询下面的网站，选择评论的适合出现的图像 https://valine.js.org/#/avatar
-  avatar: monsterid # gravatar style
+  avatar: hide # gravatar style
   #你的对应的服务器的地址，就在appid那一页的下面
-  serverURLs: # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
+  serverURLs: https://uiqs9a0n.api.lncldglobal.com # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
   #评论系统的背景
   bg: # valine background
   #是否允许游客评论
