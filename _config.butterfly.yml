@@ -6,7 +6,7 @@ nav:
   fixed: false
 
 # -------------------------------------------------------------
-
+favicon: /favicon.png
 # 必须是 /xxx/，后面||分开，然后写图标名。
 # 如果不希望显示图标，图标名可不写。
 # 默认子目录是展开的，如果你想要隐藏，在子目录里添加 hide 。
@@ -419,7 +419,7 @@ copy:
 
 # Need to install the hexo-wordcount plugin
 wordcount:
-  enable: false
+  enable: true
   # 在文章页面显示字数
   post_wordcount: true
   # 在文章页面显示閲读时间
@@ -429,16 +429,30 @@ wordcount:
 
 # 访问人数 busuanzi (UV 和 PV)
 busuanzi:
-  site_uv: false
+  site_uv: true
   site_pv: true
   page_pv: true
 
 # 主题支持三种搜索方式（algolia_search / local_search / docsearch），你可以选择一种或者多种搜索方式
-# search:
-#   # Choose: algolia_search / local_search / docsearch
-#   # leave it empty if you don't need search
-#   use: # 选择你需要的搜索方式，不需要开启留空白
-#   placeholder: # 搜索框的提示文字
+search:
+  # Choose: algolia_search / local_search / docsearch
+  # leave it empty if you don't need search
+  use: local_search # 选择你需要的搜索方式，不需要开启留空白
+  placeholder: 输入你想找的关键字吧~ # 搜索框的提示文字
+  path:
+  field: all
+  content: true
+  template:
+
+  # Local Search
+local_search:
+  # Preload the search data when the page loads.
+  preload: false
+  # Show top n results per article, show all results by setting to -1
+  top_n_per_article: 1
+  # Unescape html strings to the readable one.
+  unescape: false
+  CDN:
 
 canvas_ribbon:
   enable: false
@@ -585,3 +599,40 @@ series:
   orderBy: "date" # Order by title or date
   order: 1 # Sort of order. 1, asc for ascending; -1, desc for descending
   number: true
+# -------------------------------------------------------------------------
+
+comments:
+  # Up to two comments system, the first will be shown as default
+  # Leave it empty if you don't need comments
+  # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
+  # Format of two comments system : Disqus,Waline
+  use: valine
+  # Display the comment name next to the button
+  text: true
+  # Lazyload: The comment system will be load when comment element enters the browser's viewport.
+  # If you set it to true, the comment count will be invalid
+  lazyload: false
+  # Display comment count in post's top_img
+  count: false
+  # Display comment count in Home Page
+  card_post_count: false
+
+valine:
+  appId: UiqS9a0n4lJdFRrqPbrgjpbS-MdYXbMMI
+  appKey: NkeAhjIM8aY4DBSeOIzuQ1qQ
+  #查询下面的网站，选择评论的适合出现的图像 https://valine.js.org/#/avatar
+  avatar: monsterid # gravatar style
+  #你的对应的服务器的地址，就在appid那一页的下面
+  serverURLs: # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
+  #评论系统的背景
+  bg: # valine background
+  #是否允许游客评论
+  visitor: true
+  #评论区显示的文字
+  placeholder: 留下你的足迹o(*￣▽￣*)ブ
+  #每一页最大的评论数量
+  pageSize: 15
+  option:
+
+# Stretches the lines so that each line has equal width（文字向两侧对齊，对最后一行无效）
+text_align_justify: true
