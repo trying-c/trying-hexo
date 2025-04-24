@@ -10,7 +10,11 @@ tags:
 series:
   - Hexo
 ---
-Hexo 是一款高效便捷的静态博客框架，但每次更新文章后手动生成静态文件并部署到 GitHub Pages 可能会有些繁琐。借助 **GitHub Actions** 工具，我们可以实现自动化部署，解放双手。部署到 Github Pages 的方式常用的是 Hexo 官方推荐的 `hexo-deployer-git` 一键部署；本文则是通过编写自定义的 GitHub Actions 工作流配置文件（如 `deploy.yml`）去完成静态网页的生成并将其推送到分支后触发 Github Pages 的部署。
+
+- Hexo 是一款高效便捷的静态博客框架，但每次更新文章后手动生成静态文件并部署到 GitHub Pages 可能会有些繁琐。
+- 借助 **GitHub Actions** 工具，我们可以实现自动化部署，解放双手。
+- 部署到 Github Pages 的常用方式是 **Hexo** 官方推荐的 `hexo-deployer-git` 一键部署
+- 本文则是通过编写自定义的 **GitHub Actions** 工作流配置文件（如 `deploy.yml`）去完成静态网页的生成并将其推送到分支后触发 **Github Pages** 的部署。
 
 ---
 
