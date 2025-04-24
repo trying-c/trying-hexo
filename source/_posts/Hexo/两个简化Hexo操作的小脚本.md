@@ -57,6 +57,6 @@ hexo clean && hexo g && hexo s
 - 确认无误后双击 `发布.bat`更新网站
 - 修改主题配置后快速验证改动
 
-{% note no-icon %}
+{% note primary no-icon %}
 虽然只是简单的命令封装，但每天能节省几分钟重复操作时间
 {% endnote %}

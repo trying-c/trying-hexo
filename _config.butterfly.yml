@@ -360,7 +360,7 @@ translate:
   # 默认按钮显示文字(网站是简体，应设置为'default: 繁')
   default: 繁
   #网站默认语言，1: 繁体中文, 2: 简体中文
-  defaultEncoding: 1
+  defaultEncoding: 2
   #延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
   translateDelay: 0
   #当文字是简体时，按钮显示的文字
@@ -544,12 +544,12 @@ theme_color:
   main: "#C8A2C8" # 标准香芋紫 (核心色)
   paginator: "#B19CD9" # 雾紫分页
   button_hover: "#9F86C7" # 加深15%悬停
-  text_selection: "#E6E6FA" # 薰衣草白选中
+  text_selection: "#6B46C1" # 暗色优化选中色
   link_color: "#967BB6" # 灰紫链接
   meta_color: "#A89CC8" # 浅灰紫元数据
   hr_color: "#D8BFD8" # 丝绒紫分隔线
-  code_foreground: "#6B4E85" # 葡萄紫代码
-  code_background: "#F5F0FA" # 月光紫背景
+  code_foreground: "#9B59B6" # 修改后的代码颜色（深紫水晶）
+  code_background: "rgba(245, 240, 250, 0.9)"
   toc_color: "#B4A7D6" # 珍珠紫目录
   blockquote_padding_color: "#DFD8EC" # 淡紫边框
   blockquote_background_color: "#F8F6FC" # 雪纺紫背景
