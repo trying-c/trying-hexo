@@ -1,8 +1,11 @@
 ---
 title: 一次失败的域名托管实践：Cloudns + Cloudflare + GitHub Pages
+categories: GitHub
 tags:
   - GitHub
   - 失败案例
+series:
+  - GitHub
 abbrlink: 24432
 date: 2025-04-25 19:23:58
 ---
