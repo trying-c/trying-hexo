@@ -92,17 +92,11 @@ cover:
 
   # 默认的 cover, 可配置图片链接/顔色/渐变色等
   default_cover:
-    - "linear-gradient(135deg, #F9F5FD 0%, #E6E6FA 30%, #D8BBDD 60%, #FFD8A8 100%)"
-    - "linear-gradient(45deg, #C8A2C8 0%, #B19CD9 33%, #88C9A1 66%, #6BD3BF 100%)"
-    - "linear-gradient(90deg, #6B46C1 0%, #9370DB 25%, #C8A2C8 50%, #E6A8FE 75%, #FFB6C1 100%)"
-    - "linear-gradient(215deg, #2A0944 0%, #6B46C1 30%, #C8A2C8 60%, #FFE4B5 90%)"
-    - "linear-gradient(145deg, #F0E6FF 0%, rgba(200,162,200,0.6) 50%, #B8E994 100%)"
-    - "linear-gradient(to top, #ba5370, #f4e2d8)"
-    - "linear-gradient(120deg, #F9F5FD 0%, #E6D4F5 50%, #D8BEE4 100%)"
-    - "radial-gradient(circle at 50% 50%, #C8A2C8 0%, #BA55D3 50%, #9B59B6 100%)"
-    - "linear-gradient(to right, rgba(200,162,200,0.1) 0%, rgba(200,162,200,0.3) 50%, rgba(200,162,200,0.1) 100%)"
-    - "linear-gradient(215deg, #F0E6FF 20%, #C8A2C8 50%, #2A0944 80%)"
-    - "linear-gradient(90deg, #F9B5D0 0%, #E6A8FE 33%, #C8A2C8 66%, #A98ACA 100%)"
+    - "/imgs/cover/1.png"
+    - "/imgs/cover/2.png"
+    - "/imgs/cover/3.png"
+    - "/imgs/cover/4.png"
+    - "/imgs/cover/5.png"
   # 当配置多张图片时,会随机选择一张作为 cover.此时写法应为
   # default_cover:
   #   - https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png
@@ -170,7 +164,7 @@ subtitle:
 
 # ---------------------------------------------------------------------------------------
 
-index_layout: 5
+index_layout: 3
 # 1: 封面在左，信息在右;
 # 2: 封面在右，信息在左;
 # 3: 封面和信息左右交替显示;
