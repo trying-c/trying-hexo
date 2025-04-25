@@ -1,15 +1,11 @@
 ---
 title: 使用 GitHub Actions 自动部署 Hexo
-categories: 
-  - GitHub
-  - Hexo
+categories: GitHub
 tags:
   - 效率工具
   - GitHub
   - Hexo
-series:
-  - GitHub
-  - Hexo
+series: GitHub
 abbrlink: 24967
 date: 2025-04-24 23:12:37
 ---
@@ -122,7 +118,7 @@ jobs:
 
 ## 总结
 
-1. 追求快速上手，官方的一键部署完全够用！！（{% post_link 'Hexo/两个简化Hexo操作的小脚本' '也可以编写便捷的脚本，双击文件解决繁琐的发布操作' %}）
+1. 追求快速上手，官方的一键部署完全够用！！（{% post_link '两个简化Hexo操作的小脚本' '也可以编写便捷的脚本，双击文件解决繁琐的发布操作' %}）
 2. 追求解放双手，自定义 GitHub Actions 工作流会是更好的选择喔~（还能实现 Github 上使用同一仓库完成源码托管和静态部署）
 
 两种方式最终都通过 GitHub Pages 实现博客托管，读者可以根据实际需求灵活选用。

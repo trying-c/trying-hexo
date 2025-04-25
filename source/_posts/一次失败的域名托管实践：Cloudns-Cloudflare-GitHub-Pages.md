@@ -4,8 +4,7 @@ categories: GitHub
 tags:
   - GitHub
   - 失败案例
-series:
-  - GitHub
+series: GitHub
 abbrlink: 24432
 date: 2025-04-25 19:23:58
 ---
@@ -59,9 +58,9 @@ date: 2025-04-25 19:23:58
 
 {% mermaid %}
 graph LR
-A[Cloudns免费域名] -->|锁定NS| B(必须使用cloudns.net的NS)
-C[Cloudflare] -->|要求| D(必须改用cloudflare的NS)
-B --> E((NS冲突))
+A[Cloudns 免费域名] -->|锁定 NS| B(必须使用 cloudns.net 的 NS)
+C[Cloudflare] -->|要求| D(必须改用 cloudflare 的 NS)
+B --> E((NS 冲突))
 D --> E
 {% endmermaid %}
 
