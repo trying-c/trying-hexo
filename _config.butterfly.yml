@@ -638,8 +638,6 @@ valine:
 # Stretches the lines so that each line has equal width（文字向两侧对齊，对最后一行无效）
 text_align_justify: true
 
-permalink: posts/:abbrlink/
-
 # abbrlink config
 abbrlink:
   alg: crc32 # Algorithm used to calc abbrlink. Support crc16(default) and crc32
