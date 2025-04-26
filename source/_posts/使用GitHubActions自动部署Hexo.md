@@ -1,11 +1,11 @@
 ---
 title: 使用 GitHub Actions 自动部署 Hexo
 categories: GitHub
+series: GitHub
 tags:
   - 效率工具
   - GitHub
   - Hexo
-series: GitHub
 abbrlink: 24967
 date: 2025-04-24 23:12:37
 ---
