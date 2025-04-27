@@ -1,11 +1,11 @@
 nav:
   # Navigation bar logo image
-  logo: /imgs/tc.png
+  logo: /assets/imgs/tc.png
   display_title: true
   # Whether to fix navigation bar
   fixed: false
 
-favicon: /imgs/tc.ico
+favicon: /assets/imgs/tc.ico
 # -------------------------------------------------------------
 # 必须是 /xxx/，后面||分开，然后写图标名。
 # 如果不希望显示图标，图标名可不写。
@@ -51,7 +51,7 @@ code_blocks:
 # --------------------------------------------------------------------
 
 avatar:
-  img: /imgs/tc.png
+  img: /assets/imgs/tc.png
   effect: false # 头像会一直转圈
 
 social:
@@ -61,13 +61,13 @@ social:
 # 是否禁用顶部图片
 disable_top_img: false
 # 主页的 top_img
-index_img: "/imgs/index.jpg"
+index_img: "/assets/imgs/index.jpg"
 # 默认的 top_img，当页面的 top_img 没有配置时，会显示 default_top_img
-default_top_img: "/imgs/tags.jpg"
+default_top_img: "/assets/imgs/tags.jpg"
 # 归档页面的 top_img
-archive_img: "/imgs/archive.jpg"
+archive_img: "/assets/imgs/archive.jpg"
 # tag 子页面 的 默认 top_img
-tag_img: "/imgs/default.jpg"
+tag_img: "/assets/imgs/default.jpg"
 # tag 子页面的 top_img，可配置每个 tag 的 top_img
 tag_per_img:
 # category 子页面 的 默认 top_img
@@ -93,11 +93,11 @@ cover:
 
   # 默认的 cover, 可配置图片链接/顔色/渐变色等
   default_cover:
-    - "/imgs/cover/1.png"
-    - "/imgs/cover/2.png"
-    - "/imgs/cover/3.png"
-    - "/imgs/cover/4.png"
-    - "/imgs/cover/5.png"
+    - "/assets/imgs/cover/1.png"
+    - "/assets/imgs/cover/2.png"
+    - "/assets/imgs/cover/3.png"
+    - "/assets/imgs/cover/4.png"
+    - "/assets/imgs/cover/5.png"
   # 当配置多张图片时,会随机选择一张作为 cover.此时写法应为
   # default_cover:
   #   - https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png
@@ -486,7 +486,7 @@ click_heart:
 # https://github.com/francoischalifour/medium-zoom
 # https://fancyapps.com/fancybox/
 # Leave it empty if you don't need lightbox
-lightbox:
+lightbox: fancybox
 
 # Artitalk
 # see https://artitalk.js.org/
@@ -510,7 +510,7 @@ artitalk:
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    - <link rel="stylesheet" href="/css/custom.css">
+    - <link rel="stylesheet" href="/assets/css/custom.css">
 
 # A simple 404 page
 # 简单的 404 页面
@@ -638,24 +638,43 @@ valine:
   bg: # valine background
   #是否允许游客评论
   visitor: true
-  #评论区显示的文字
-  placeholder: 留下你的足迹o(*￣▽￣*)ブ
   #每一页最大的评论数量
   pageSize: 15
   option:
+    enableQQ: true # 是否启用QQ头像
+    placeholder: 留下你的足迹o(*￣▽￣*)ブ （PS:填写数字QQ邮箱可以自动获取QQ头像） #评论区显示的文字
+    # emojiCDN: "//i0.hdslb.com/bfs/emote/" #设置Bilibili表情包地址
+    emojiMaps: {} #表情title和图片映射
 
 waline:
   serverURL: https://forwaline-vercel-8crt.vercel.app/ # Waline server address url
   bg: # waline background
   pageview: true
   option:
+    locale:
+      {
+        nick: "昵称",
+        mail: "邮箱",
+        link: "你的网站",
+        placeholder: "留下你的足迹o(*￣▽￣*)ブ （PS:填写数字QQ邮箱可以自动获取QQ头像）",
+        requiredMeta: [],
+        sofa: "评论区空空如也~呜呜呜",
+        login: "登录(可选)",
+      }
+    reaction: false # 开启快速反应
+    search: false
+    emoji:
+      - "//unpkg.com/@waline/emojis@1.2.0/bilibili"
+      - "//unpkg.com/@waline/emojis@1.2.0/qq"
+      - "//unpkg.com/@waline/emojis@1.2.0/tieba"
+      - "//unpkg.com/@waline/emojis@1.2.0/weibo"
 
 # Stretches the lines so that each line has equal width（文字向两侧对齊，对最后一行无效）
 text_align_justify: true
 
 # abbrlink config
 abbrlink:
-  alg: crc32 # Algorithm used to calc abbrlink. Support crc16(default) and crc32
+  alg: crc16 # Algorithm used to calc abbrlink. Support crc16(default) and crc32
   rep: hex # Representation of abbrlink in URLs. Support dec(default) and hex
   drafts: true # Whether to generate abbrlink for drafts. (false in default)
   force: true # Enable force mode. In this mode, the plugin will ignore the cache, and calc the abbrlink for every post even it already had an abbrlink. (false in default)

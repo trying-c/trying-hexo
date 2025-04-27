@@ -53,10 +53,12 @@ highlight: # 代码块的设置, 请参考 Highlight.js 进行设置
   tab_replace: ""
   wrap: true
   hljs: false
+  exclude_languages: ["mermaid"]
 prismjs: # 代码块的设置, 请参考 PrismJS 进行设置
   preprocess: true
   line_number: false
   tab_replace: ""
+  exclude_languages: ["mermaid"]
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
