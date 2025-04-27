@@ -643,8 +643,6 @@ valine:
   option:
     enableQQ: true # 是否启用QQ头像
     placeholder: 留下你的足迹o(*￣▽￣*)ブ （PS:填写数字QQ邮箱可以自动获取QQ头像） #评论区显示的文字
-    # emojiCDN: "//i0.hdslb.com/bfs/emote/" #设置Bilibili表情包地址
-    emojiMaps: {} #表情title和图片映射
 
 waline:
   serverURL: https://forwaline-vercel-8crt.vercel.app/ # Waline server address url
