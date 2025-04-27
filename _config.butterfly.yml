@@ -615,7 +615,7 @@ comments:
   # Leave it empty if you don't need comments
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
   # Format of two comments system : Disqus,Waline
-  use: valine
+  use: waline,valine
   # Display the comment name next to the button
   text: true
   # Lazyload: The comment system will be load when comment element enters the browser's viewport.
@@ -641,6 +641,12 @@ valine:
   placeholder: 留下你的足迹o(*￣▽￣*)ブ
   #每一页最大的评论数量
   pageSize: 15
+  option:
+
+waline:
+  serverURL: https://forwaline-vercel-8crt.vercel.app/ # Waline server address url
+  bg: # waline background
+  pageview: true
   option:
 
 # Stretches the lines so that each line has equal width（文字向两侧对齊，对最后一行无效）
