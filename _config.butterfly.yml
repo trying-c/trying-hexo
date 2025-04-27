@@ -631,7 +631,7 @@ valine:
   appId: UiqS9a0n4lJdFRrqPbrgjpbS-MdYXbMMI
   appKey: NkeAhjIM8aY4DBSeOIzuQ1qQ
   #查询下面的网站，选择评论的适合出现的图像 https://valine.js.org/#/avatar
-  avatar: hide # gravatar style
+  avatar: # gravatar style
   #你的对应的服务器的地址，就在appid那一页的下面
   serverURLs: https://uiqs9a0n.api.lncldglobal.com # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
   #评论系统的背景
