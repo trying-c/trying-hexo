@@ -1,13 +1,13 @@
 ---
 title: 使用 GitHub Actions 自动部署 Hexo
+abbrlink: 24967
+date: 2025-04-24 23:12:37
 categories: GitHub
 series: GitHub
 tags:
   - 效率工具
   - GitHub
   - Hexo
-abbrlink: 24967
-date: 2025-04-24 23:12:37
 ---
 
 - Hexo 是一款高效便捷的静态博客框架，但每次更新文章后手动生成静态文件并部署到 GitHub Pages 可能会有些繁琐。
