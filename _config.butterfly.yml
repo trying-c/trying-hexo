@@ -631,7 +631,7 @@ valine:
   appId: UiqS9a0n4lJdFRrqPbrgjpbS-MdYXbMMI
   appKey: NkeAhjIM8aY4DBSeOIzuQ1qQ
   #查询下面的网站，选择评论的适合出现的图像 https://valine.js.org/#/avatar
-  avatar: # gravatar style
+  avatar: hide # gravatar style
   #你的对应的服务器的地址，就在appid那一页的下面
   serverURLs: https://uiqs9a0n.api.lncldglobal.com # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
   #评论系统的背景
@@ -641,8 +641,7 @@ valine:
   #每一页最大的评论数量
   pageSize: 15
   option:
-    enableQQ: true # 是否启用QQ头像
-    placeholder: 留下你的足迹o(*￣▽￣*)ブ （PS:填写数字QQ邮箱可以自动获取QQ头像） #评论区显示的文字
+    placeholder: 留下你的足迹o(*￣▽￣*)ブ #评论区显示的文字
 
 waline:
   serverURL: https://forwaline-vercel-8crt.vercel.app/ # Waline server address url
