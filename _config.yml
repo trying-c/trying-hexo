@@ -48,6 +48,7 @@ relative_link: false # 把链接改为与根目录的相对位址
 future: true #显示未来的文章
 syntax_highlighter: highlight.js # 代码块的设置, 请参考 代码高亮 进行设置
 highlight: # 代码块的设置, 请参考 Highlight.js 进行设置
+  enable: true
   line_number: false
   auto_detect: false
   tab_replace: ""
@@ -55,6 +56,7 @@ highlight: # 代码块的设置, 请参考 Highlight.js 进行设置
   hljs: false
   exclude_languages: ["mermaid"]
 prismjs: # 代码块的设置, 请参考 PrismJS 进行设置
+  enable: false
   preprocess: true
   line_number: false
   tab_replace: ""

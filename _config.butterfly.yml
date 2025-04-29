@@ -16,10 +16,10 @@ menu:
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
   留言板: /messageboard/ || fas fa-comment-dots
-  个人||fa fa-user:
-    关于: /about/ || fas fa-circle-info
-    简历: /resume/ || fas fa-file-text
-    碎片: /pianke/suipian || fas fa-mug-hot
+  # 个人||fa fa-user:
+  # 关于: /about/ || fas fa-circle-info
+  # 简历: /resume/ || fas fa-file-text
+  # 碎片: /pianke/suipian || fas fa-mug-hot
   # 音乐: /music/ || fas fa-music
   照片: /Gallery/ || fas fa-images
   # 电影: /movies/ || fas fa-video
@@ -40,7 +40,7 @@ code_blocks:
   language: true # 是否显示语言标签
 
   shrink: false # true: 收缩代码块 / false: 展开代码块 / none: 展开代码块并隐藏按钮
-  fullpage: false # 是否全屏显示代码块
+  fullpage: true # 是否全屏显示代码块
 
   highlight_shrink: false # true 全部代码框不展开，需点击>打开;
   #  false 代码框展开，有>点击按钮;
