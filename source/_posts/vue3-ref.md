@@ -7,11 +7,11 @@ tags:
   - 响应式原理
 ---
 
-## 一、初识 Ref 家族
+## 初识 Ref 家族
 
 在 Vue3 的响应式系统中，Ref 家族成员扮演着重要角色。它们帮助我们处理基本类型和复杂类型的响应式需求，下面让我们逐个认识这些实用的 API。
 
-### 1.1 ref：响应式数据声明
+### ref：响应式数据声明
 
 ```javascript
 import { ref } from "vue";
@@ -40,7 +40,7 @@ function increment() {
 - 需要保持引用的对象
 - 需要显式跟踪变化的场景（**比如用在模板中的数据**）
 
-### 1.2 isRef：判断是否为 Ref 数据对象
+### isRef：判断是否为 Ref 数据对象
 
 ```javascript
 import { ref, isRef } from "vue";
@@ -56,7 +56,7 @@ console.log(isRef(num2)); // false
 - 判断变量是否为 ref 对象
 - 类型检查时特别有用
 
-### 1.3 shallowRef：浅层响应式数据
+### shallowRef：浅层响应式数据
 
 ```javascript
 import { shallowRef } from "vue";
@@ -81,7 +81,7 @@ user.value.address.city = "上海";
 - 适合大型对象优化
 - 深层响应的情况需要配合`triggerRef`使用
 
-### 1.4 triggerRef：强制触发更新
+### triggerRef：强制触发更新
 
 ```javascript
 import { shallowRef, triggerRef } from "vue";
@@ -94,7 +94,7 @@ triggerRef(data);
 ```
 > PS： ref为深层响应，shallowRef为浅层响应。ref更新时底层逻辑默认调用triggerRef，故ref和shallowRef不能用在同一个地方，不然shallowRef会受到ref的影响强制更新深层数据。
 
-### 1.5 customRef：定制版ref
+### customRef：定制版ref
 
 ```javascript
 import { customRef } from "vue";
@@ -124,7 +124,7 @@ const searchText = useDebouncedRef("");
 
 customRef相当于把ref的响应逻辑交给开发人员控制，适合有定制需求的场景下使用。
 
-## 二、成员特性对比
+## 成员特性对比
 
 | 特性         | ref  | shallowRef | customRef |
 | ------------ | ---- | ---------- | --------- |
@@ -133,7 +133,7 @@ customRef相当于把ref的响应逻辑交给开发人员控制，适合有定�
 | 性能消耗     | 较高 | 较低       | 灵活      |
 | 使用频率     | 高   | 中         | 特殊场景  |
 
-## 三、使用小贴士
+## 使用小贴士
 
 1. **避免.value 陷阱**：在模板中会自动解包，但 JS 中操作必须使用.value
 2. **性能优先原则**：深层对象建议先尝试 shallowRef
@@ -141,7 +141,7 @@ customRef相当于把ref的响应逻辑交给开发人员控制，适合有定�
 4. **解构注意事项**：解构 ref 对象会失去响应性，推荐使用 toRefs
 5. **类型安全方案**：搭配 TypeScript 使用更安心
 
-## 四、如何选择？
+## 如何选择？
 
 - 普通场景 ➡️ ref
 - 大对象优化 ➡️ shallowRef
