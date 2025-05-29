@@ -1,6 +1,6 @@
 nav:
   # Navigation bar logo image
-  logo: /assets/imgs/tc.png
+  # logo: /assets/imgs/tc.png
   display_title: true
   # Whether to fix navigation bar
   fixed: false
@@ -21,10 +21,10 @@ menu:
   # 简历: /resume/ || fas fa-file-text
   # 碎片: /pianke/suipian || fas fa-mug-hot
   # 音乐: /music/ || fas fa-music
-  照片: /Gallery/ || fas fa-images
+  # 照片: /Gallery/ || fas fa-images
   # 电影: /movies/ || fas fa-video
   # 友链: /link/ || fas fa-link
-  说说: /pianke/ || fas fa-lightbulb
+  # 说说: /pianke/ || fas fa-lightbulb
 
 # -----------------------------------------------------------------
 
@@ -51,7 +51,7 @@ code_blocks:
 # --------------------------------------------------------------------
 
 avatar:
-  img: /assets/imgs/tc.png
+  img: /assets/imgs/ooc.jpeg
   effect: false # 头像会一直转圈
 
 social:
@@ -59,7 +59,7 @@ social:
   fas fa-envelope: mailto:tryingchung@qq.com || Email || "#hdhfbb"
 
 # 是否禁用顶部图片
-disable_top_img: false
+disable_top_img: true
 # 主页的 top_img
 index_img: "/assets/imgs/index.jpg"
 # 默认的 top_img，当页面的 top_img 没有配置时，会显示 default_top_img
@@ -80,16 +80,16 @@ footer_img: true
 # 颜色（HEX值/RGB值/顔色单词/渐变色)
 # 留空 不显示背景
 # background:
-background: "#F5F0FA"
+background: "/assets/imgs/bg1.png"
 
 # -------------------------------------------------------------------------
 cover:
   # 主页是否显示文章封面图
-  index_enable: true
+  index_enable: false
   # 侧栏是否显示文章封面图
   aside_enable: false
   # 归档页面是否显示文章封面图
-  archives_enable: true
+  archives_enable: false
 
   # 默认的 cover, 可配置图片链接/顔色/渐变色等
   default_cover:
@@ -113,7 +113,7 @@ post_meta:
     # 配置时间显示明确时间还是相对时间，可选 date / relative
     date_format: date
     # 是否显示文章的分类
-    categories: true
+    categories: false
     # 是否显示文章的标签
     tags: true
     # 是否显示文字标签
@@ -263,7 +263,7 @@ aside:
   # hide: false # 是否隐藏侧边栏
   button: true # 是否显示侧边栏按钮
   mobile: true # 是否在移动端显示侧边栏
-  position: right # 侧边栏位置，left / right
+  position: left # 侧边栏位置，left / right
 
   display:
     # archive 页面是否显示 aside
@@ -283,8 +283,8 @@ aside:
       link: https://github.com/trying-c # 按钮链接
 
   card_announcement:
-    enable: false # 是否显示公告卡片
-    content: This is my Blog # 公告内容 （可使用 html 标签）
+    enable: true # 是否显示公告卡片
+    content: 欢迎来到我的博客！<br/> 我的博客还在持续建设中 # 公告内容 （可使用 html 标签）
 
   card_recent_post:
     enable: true # 是否显示最新文章卡片
@@ -462,7 +462,7 @@ canvas_ribbon:
   mobile: false
 
 canvas_fluttering_ribbon:
-  enable: true
+  enable: false
   mobile: false # false 手机端不显示 true 手机端显示
 
 canvas_nest:
@@ -479,7 +479,7 @@ canvas_nest:
 
 # 点击出现爱心
 click_heart:
-  enable: true
+  enable: false
   mobile: false
 
 # Choose: fancybox / medium_zoom
@@ -531,41 +531,23 @@ share:
 sharejs:
   sites: wechat,qq #facebook,twitter,wechat,weibo,qq
 
-# theme_color:
-#   enable: true
-#   main: "#C8A2C8" # 主色调（淡紫色）
-#   paginator: "#A98ACA" # 分页器颜色（浅紫色）
-#   button_hover: "#9B59B6" # 按钮悬停（深紫色）
-#   text_selection: "#E6E6FA" # 文字选中（薰衣草色）
-#   link_color: "#B19CD9" # 链接颜色（淡紫罗兰）
-#   meta_color: "#9370DB" # 元信息颜色（中紫色）
-#   hr_color: "#D8BFD8" # 分割线颜色（蓟紫色）
-#   code_foreground: "#8E44AD" # 代码前景色（深紫色）
-#   code_background: "rgba(232, 222, 238, 0.5)" # 代码背景（半透明淡紫）
-#   toc_color: "#BA55D3" # 目录颜色（中兰花紫）
-#   blockquote_padding_color: "#E6E6FA" # 引用框边线（薰衣草色）
-#   blockquote_background_color: "#F5F0FA" # 引用框背景（淡紫白）
-#   scrollbar_color: "#C8A2C8" # 滚动条颜色（与主色一致）
-#   meta_theme_color_light: "#F5F0FA" # 浅模式主题色（淡紫白）
-#   meta_theme_color_dark: "#2A0944" # 深模式主题色（深紫色）
-
 theme_color:
   enable: true
-  main: "#C8A2C8" # 标准香芋紫 (核心色)
-  paginator: "#B19CD9" # 雾紫分页
-  button_hover: "#9F86C7" # 加深15%悬停
-  text_selection: "#6B46C1" # 暗色优化选中色
-  link_color: "#967BB6" # 灰紫链接
-  meta_color: "#A89CC8" # 浅灰紫元数据
-  hr_color: "#D8BFD8" # 丝绒紫分隔线
-  code_foreground: "#9B59B6" # 修改后的代码颜色（深紫水晶）
-  code_background: "rgba(245, 240, 250, 0.9)"
-  toc_color: "#B4A7D6" # 珍珠紫目录
-  blockquote_padding_color: "#DFD8EC" # 淡紫边框
-  blockquote_background_color: "#F8F6FC" # 雪纺紫背景
-  scrollbar_color: "#B19CD9" # 哑光紫滚动条
-  meta_theme_color_light: "#F9F6FF" # 薄雾白（含5%主色）
-  meta_theme_color_dark: "#2A0948" # 深夜紫（主色加深300%）
+  main: "#0a4c0e" # 核心深绿 (松林暗部)
+  paginator: "#0c5c12" # 翡翠矿脉分页
+  button_hover: "#083d0b" # 午夜丛林悬停
+  text_selection: "#052908" # 幽谷选中色
+  link_color: "#0e7a1b" # 新生蕨类链接
+  meta_color: "#4a6d4e" # 青苔灰元数据
+  hr_color: "#2d5c30" # 古柏年轮分隔线
+  code_foreground: "#0fbf2d" # 磷光绿代码
+  code_background: "rgba(225, 245, 228, 0.9)" # 晨雾半透背景
+  toc_color: "#1a5c1f" # 松针目录
+  blockquote_padding_color: "#3d6d41" # 年轮纹路边框
+  blockquote_background_color: "#e8f5e9" # 林间晨光背景
+  scrollbar_color: "#1a5c1f" # 竹节滚动条
+  meta_theme_color_light: "#e8f5e9" # 薄雾绿（含5%主色）
+  meta_theme_color_dark: "#031f05" # 原始雨林（主色加深400%）
 
 # Add a mask to the header and footer
 mask:
@@ -574,7 +556,7 @@ mask:
 
 # 加載動畫 Loading Animation
 preloader:
-  enable: true
+  enable: false # 是否启用加载动画
   # source
   # 1. fullpage-loading
   # 2. pace (progress bar)
