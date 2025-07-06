@@ -81,8 +81,6 @@ footer_img: true
 # 留空 不显示背景
 # background:
 background: "/assets/imgs/bg.png"
-# background: "http://116.205.128.184:9000/trying-c.github.io/bg.png"
-
 # -------------------------------------------------------------------------
 cover:
   # 主页是否显示文章封面图
