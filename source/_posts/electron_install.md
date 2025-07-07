@@ -1,10 +1,11 @@
 ---
-title: 解决 Electron 安装失败问题 —— RequestError: unable to verify the first certificate：
+title: 解决 Electron 安装失败问题 "RequestError unable to verify the first certificate"
 tags:
   - Electron
   - 安装教程
   - Node
-  - NPM 
+  - NPM
+abbrlink: 40870
 date: 2025-07-07 17:39:17
 ---
 
@@ -103,9 +104,9 @@ cnpm install electron
 2. 对证书验证的处理可能更宽松
 3. 使用了专门为国内优化的下载逻辑
 
-### 推荐工作流程
+### 推荐安装方法
 
-对于国内开发者，建议采用以下工作流程安装 Electron：
+对于国内开发者，建议采用以下流程安装 Electron：
 
 ```bash
 # 1. 安装cnpm

@@ -3,6 +3,7 @@ title: MySQL ERROR 1698 解决指南：root用户访问被拒绝问题
 tags:
   - MySQL
   - 避坑指南
+abbrlink: 35329
 date: 2025-05-29 11:59:11
 ---
 > 当在 Ubuntu 系统中安装 MySQL 后，尝试使用 `mysql -u root -p`登录时，可能会遇到"ERROR 1698 (28000): Access denied for user 'root'@'localhost'"错误。本文将详细解析问题原因并提供完整解决方案。
